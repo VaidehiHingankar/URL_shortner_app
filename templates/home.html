@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Add
+{% endblock %}
+
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+    .forms {
+        font-family: 'Quicksand', sans-serif;
+        height: 100vh;
+        background: linear-gradient(to right, #373b44, #4286f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     
+           display: flex;
+           align-items: center;
+           justify-content: center;
+    }
+
+   .action-container{
+       background-color: white;
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+       height: 500px;
+       width: 80%;
+       display: flex;
+       flex-direction: column;
+   
+       align-items: center;
+       padding: 50px;
+       
+       border-radius: 30px;
+    }
+    .action-container h2{
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+.action-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+}
+
+.action-container label{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+    .input1 {
+        background-color: transparent;
+        border: solid 2px gray;
+        border-radius: 10px;
+        padding: 16px;
+        width: 60vw;
+        margin-bottom: 50px;
+        font-size: 22px;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .input2 {
+        width: 150px;
+         background-color: #00425A;
+         color: white;
+         font-family: 'quicksand' , sans-serif;
+         border: none;
+         border-radius: 10px;
+         padding: 15px;
+         cursor: pointer;
+         transition: 0.5s;
+    }
+    .input2:hover{
+        background-color: white;
+        color: #00425A;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .container-data{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin-top: 100px;
+     height: 50px;
+      width: 600px;
+      display: flex;
+      align-items: center;
+      border: solid 2px gray;
+      border-radius: 2px;
+    }
+    .container-data p{
+        height: 50px; 
+        display: flex;
+      align-items: center;
+      padding-left: 20px;
+        width: fit-content;
+        margin-right: 20px;
+       color: black;
+       background-color: white;
+       border-right: 1px solid gray;
+        
+    }
+</style>
+<div class="forms">
+    <div class="action-container">
+        <h2>Tiny Url</h2>
+    <form method="POST">
+        <label>Enter Full Url Here</label>
+        <input class="input1" type="text" name="in_1" placeholder="Enter a url " autocomplete="off">
+        <input class="input2" type="submit" placeholder="short url">
+    </form>
+    <div class="container-data">
+        <p style="width:50px">   URL   </p>
+     <a href='{{ short_url }}' target="_blank"> {{ short_url }}</a>
+     
+</div>
+</div>
+
+<div>
+   
+</div>
+</div>
+
+{% endblock %}

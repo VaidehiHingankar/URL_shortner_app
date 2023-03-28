@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+ADD
+{% endblock %}
+
+{% block content %}
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    background: linear-gradient(to right, #373b44, #4286f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+
+}
+.container .table-box{
+    display: flex;
+     justify-content: center;
+    
+  font-family: 'quicksand' , sans-serif
+}
+
+.table-box table{
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+table {
+ 
+  font-size: 18px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 80%;
+  overflow: hidden;
+}
+
+.long{
+    width: 200px !important;
+    overflow: hidden !important;
+}
+
+td,
+th {
+
+  padding: 16px 24px;
+  text-align: left;
+}
+
+thead tr {
+
+  background-color: #087f5b;
+  color: #fff;
+}
+
+thead th {
+  width: 25%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+    </style>
+    <div class="container">
+        <div class="table-box">
+<table>
+    <thead>
+    <tr>
+        <th>Long URL</th>
+        <th>Short URL</th>
+    </tr>
+</thead>
+<tbody>
+    {% for url in URLs %}
+    
+    <tr> 
+        <td class="long">
+            {{ url.long }}
+        </td>
+        
+        <td>
+            <a href="{{ url.short }}" target="_blank"> {{ url.short }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+</table>
+</div>
+</div>
+
+{% endblock %}
